@@ -57,5 +57,5 @@ Starting with a client making a GET request to a particular URL, describe how
 the parts of Rails interact to produce and send a response.
 
 ```md
-First, the request goes to the server, and the server looks at the routes to figure out which controller and action to create. The controller then uses information from the model to read/access the information from the database. All information is stored in the controller, and it is displayed, finally, to the view state so the user can see the information they requested.
+First, the browser sends the URL request, and that hits the Rails router in config/routes.rb. This router maps the URL to the right controller action for the GET request. The action receives the request and asks the model to fetch the data from the database. Then the model returns that data back to the controller action, where it passes a request to View. View renders the data on the controller into HTML/CSS/etc, and passes it back to the controller, where the controller finally returns the HTML back to the browser so it can be seen by the user
 ```
